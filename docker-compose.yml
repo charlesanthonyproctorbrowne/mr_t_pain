@@ -1,0 +1,37 @@
+services:
+  package-decoder--app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: packet-decoder--app
+    environment:
+      NODE_ENV: production
+      REDIS_HOST: package-decoder--redis
+      REDIS_PORT: 6379
+    depends_on:
+      - package-decoder--redis
+    networks:
+      - app-network
+
+  package-decoder--redis:
+    image: redis:alpine
+    container_name: package-decoder--redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+    networks:
+      - app-network
+
+  # ====================================
+  # ====================================
+  # I'd do another test container here and run the tests in a separate container
+  # But I'm a bit busy at the moment so don't have the time
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  redis-data:
