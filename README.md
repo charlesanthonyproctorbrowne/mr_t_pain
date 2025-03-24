@@ -38,6 +38,7 @@ packet-decoder/
 └── package.json
 ```
 
+# How To Run?
 ## Installation
 
 ```bash
@@ -48,6 +49,11 @@ cd packet-decoder
 # Run via Docker
 docker-compose up -d
 ```
+Then you want to inspect `packet-decoder--app` the output in that container. Install `Docker Desktop` and you can just run `docker-compose up -d` inspect the output in docker all should be fine (works on my machine classic).
+
+I'm a big fan of Docker however, we use AWS and CDK for IaC so haven't implemented it outside of our legacy applications.
+
+But yes - as long as you have the docker daemon running, and ideally docker desktop or you can run Rancher Desktop (basically an open-source view for your docker containers as docker desktop needs license for commerical use so not all have it).
 
 ## Testing
 
