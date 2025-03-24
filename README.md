@@ -1,3 +1,11 @@
+---
+
+* Delay on getting this over due to being busy (apologies).
+* Tests missing - Ideally get them in.
+* I don't usually work with bytes in JS, this hurt my brain. Thank you. I was fooled to think I just need to write some `Buffer` byte methods and get the output in the doc
+
+---
+
 # Sensor Packet Decoder
 
 A TypeScript application that decodes binary sensor packet data and places it into a Redis queue for further processing.
@@ -17,7 +25,6 @@ packet-decoder/
 ├── src/
 │   ├── models/     # Type definitions
 │   ├── services/   # Queue service implementations
-│   │   ├── tests
 │   ├── utils/      # Packet decoder logic
 │   └── index.ts    # Application entry point
 ├── tests/          # Integration tests
@@ -26,17 +33,11 @@ packet-decoder/
 └── package.json
 ```
 
-## Requirements
-
-- Node.js 18+
-- npm or yarn
-- Docker and Docker Compose (for containerized deployment)
-
 ## Installation
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/packet-decoder.git
+git clone https://github.com/charlesanthonyproctorbrowne/mr_t_pain.git
 cd packet-decoder
 
 # Run via Docker
@@ -45,13 +46,7 @@ docker-compose up -d
 
 ## Testing
 
-```bash
-# Run all tests
-npm test
-
-# Run with coverage
-npm run test:coverage
-```
+Should ideally build a container and run tests fully but don't have time sorry!
 
 ## Example Packet Format
 
@@ -99,11 +94,3 @@ When decoded, these packets produce:
   "value2": 17
 }
 ```
-
-## Design Choices
-
-- **Functional Programming Approach**: Pure functions with clear inputs and outputs
-- **Dependency Injection**: Loose coupling between components
-- **Interface Segregation**: Clean interfaces for queue implementation
-- **Error Handling**: Robust error handling throughout the application
-- **Redis for Queuing**: Lightweight, high-performance message queue
