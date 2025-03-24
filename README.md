@@ -1,3 +1,5 @@
+I would ideally, have a lot more other stuff added in. Snyk, SonarQube, eslint, PR into main, would have if we used githook actions, a .github/workflow directory with some `yml` files for trigger actions etc etc the basic standard requirements on a service.
+
 ---
 
 * Delay on getting this over due to being busy (apologies).
